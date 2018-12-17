@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>1dc34bf8-3583-4b6f-989c-c9236ef9ba9f</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Zsh2401.MVVM</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)FlexiableCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MVVMCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NotificationObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OpenParameterUrlCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModelBase.cs" />
+  </ItemGroup>
+</Project>
