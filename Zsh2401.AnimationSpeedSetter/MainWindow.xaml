@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Zsh2401.AnimationSpeedSetter"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="动画设置器" Height="160" Width="300">
+        Title="动画设置器" Height="200" Width="300">
     <Window.DataContext>
         <local:VMMain/>
     </Window.DataContext>
