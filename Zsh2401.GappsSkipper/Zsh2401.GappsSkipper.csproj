@@ -32,11 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutumnBox.Basic, Version=2018.12.17.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AutumnBox.SDK.8.12.0\lib\netstandard2.0\AutumnBox.Basic.dll</HintPath>
+    <Reference Include="AutumnBox.Basic, Version=2019.2.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutumnBox.SDK.9.0.1\lib\net461\AutumnBox.Basic.dll</HintPath>
     </Reference>
-    <Reference Include="AutumnBox.OpenFramework, Version=8.12.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AutumnBox.SDK.8.12.0\lib\netstandard2.0\AutumnBox.OpenFramework.dll</HintPath>
+    <Reference Include="AutumnBox.Logging, Version=2019.2.12.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutumnBox.SDK.9.0.1\lib\net461\AutumnBox.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="AutumnBox.OpenFramework, Version=9.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutumnBox.SDK.9.0.1\lib\net461\AutumnBox.OpenFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{80330249-3D22-4AB1-8B0B-9B7E5556575E}</ProjectGuid>
+    <ProjectGuid>{6131789E-1C72-427E-91DE-4E78B042C73E}</ProjectGuid>
     <OutputType>library</OutputType>
-    <RootNamespace>Zsh2401.AnimationSpeedSetter</RootNamespace>
-    <AssemblyName>Zsh2401.AnimationSpeedSetter</AssemblyName>
+    <RootNamespace>Zsh2401.BuildViewer</RootNamespace>
+    <AssemblyName>Zsh2401.BuildViewer</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -32,15 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutumnBox.Basic, Version=2019.2.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AutumnBox.SDK.9.0.1\lib\net461\AutumnBox.Basic.dll</HintPath>
-    </Reference>
-    <Reference Include="AutumnBox.Logging, Version=2019.2.12.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AutumnBox.SDK.9.0.1\lib\net461\AutumnBox.Logging.dll</HintPath>
-    </Reference>
-    <Reference Include="AutumnBox.OpenFramework, Version=9.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AutumnBox.SDK.9.0.1\lib\net461\AutumnBox.OpenFramework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -57,7 +48,6 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EAnimationSpeedSetter.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -74,12 +64,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="VMMain.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -91,9 +79,5 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="animation.png" />
-  </ItemGroup>
-  <Import Project="..\Zsh2401.MVVM\Zsh2401.MVVM.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
