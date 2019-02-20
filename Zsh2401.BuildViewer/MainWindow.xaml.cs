@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutumnBox.Basic.Device;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,20 @@ namespace Zsh2401.BuildViewer
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(IDevice device)
         {
             InitializeComponent();
+            (DataContext as VMBuild).Device = device;
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            (DataContext as VMBuild).DoFilter.Execute(TBSearch.Text);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            TBSearch.Text = null;
         }
     }
 }

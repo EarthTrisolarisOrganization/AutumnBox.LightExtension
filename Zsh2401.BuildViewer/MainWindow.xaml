@@ -4,9 +4,40 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Zsh2401.BuildViewer"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Build Viewer"  MinHeight="300" MinWidth="500" Height="500" Width="800">
+    <Window.DataContext>
+        <local:VMBuild></local:VMBuild>
+    </Window.DataContext>
+    <Window.Resources>
+        <local:KeyToDescConverter x:Key="ktd"></local:KeyToDescConverter>
+    </Window.Resources>
     <Grid>
-        
+        <DockPanel>
+            <Grid DockPanel.Dock="Top"  Margin="10">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <TextBlock Text="{Binding Device.SerialNumber}" Margin="10"/>
+                    <TextBlock Text="{Binding Device.Model}" Margin="10"/>
+                    <TextBlock Text="{Binding Device.Product}" Margin="10"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <materialDesign:PackIcon Margin="0,0,10,0"  VerticalAlignment="Center" Kind="Search"/>
+                    <TextBox x:Name="TBSearch" FontSize="18" Width="200" Text="{Binding Filter,Mode=TwoWay}" TextChanged="TextBox_TextChanged"/>
+                    <Button Margin="20,0,0,0" Command="{Binding Refresh}" Click="Button_Click" Style="{DynamicResource MaterialDesignFlatButton}">
+                        <materialDesign:PackIcon VerticalAlignment="Center" Kind="Refresh" />
+                    </Button>
+                </StackPanel>
+            </Grid>
+
+
+            <DataGrid IsReadOnly="True" DockPanel.Dock="Bottom" ItemsSource="{Binding Result}" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn MinWidth="350" Header="键" Binding="{Binding Key}"/>
+                    <DataGridTextColumn MinWidth="200" Header="值" Binding="{Binding Value}"/>
+                    <DataGridTextColumn MinWidth="250" Header="说明" Binding="{Binding Converter={StaticResource ktd},Path=Key}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </DockPanel>
     </Grid>
 </Window>

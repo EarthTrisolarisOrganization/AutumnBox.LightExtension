@@ -30,6 +30,7 @@ EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Zsh2401.MVVM\Zsh2401.MVVM.projitems*{1dc34bf8-3583-4b6f-989c-c9236ef9ba9f}*SharedItemsImports = 13
+		Zsh2401.MVVM\Zsh2401.MVVM.projitems*{6131789e-1c72-427e-91de-4e78b042c73e}*SharedItemsImports = 4
 		Zsh2401.MVVM\Zsh2401.MVVM.projitems*{80330249-3d22-4ab1-8b0b-9b7e5556575e}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
