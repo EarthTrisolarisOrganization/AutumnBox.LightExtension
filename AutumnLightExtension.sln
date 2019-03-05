@@ -27,6 +27,8 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Zsh2401.MVVM", "Zsh2401.MVV
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zsh2401.BuildViewer", "Zsh2401.BuildViewer\Zsh2401.BuildViewer.csproj", "{6131789E-1C72-427E-91DE-4E78B042C73E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zsh2401.KFMarkActivator", "Zsh2401.KFMarkActivator\Zsh2401.KFMarkActivator.csproj", "{42D697E6-8731-4D57-AEB3-A485AFEB72F3}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Zsh2401.MVVM\Zsh2401.MVVM.projitems*{1dc34bf8-3583-4b6f-989c-c9236ef9ba9f}*SharedItemsImports = 13
@@ -82,6 +84,10 @@ Global
 		{6131789E-1C72-427E-91DE-4E78B042C73E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6131789E-1C72-427E-91DE-4E78B042C73E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6131789E-1C72-427E-91DE-4E78B042C73E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42D697E6-8731-4D57-AEB3-A485AFEB72F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42D697E6-8731-4D57-AEB3-A485AFEB72F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42D697E6-8731-4D57-AEB3-A485AFEB72F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42D697E6-8731-4D57-AEB3-A485AFEB72F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
