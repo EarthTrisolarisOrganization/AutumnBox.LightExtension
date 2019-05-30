@@ -18,15 +18,10 @@
             <Grid DockPanel.Dock="Top"  Margin="10">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                     <TextBlock Text="{Binding Device.SerialNumber}" Margin="10"/>
-                    <TextBlock Text="{Binding Device.Model}" Margin="10"/>
-                    <TextBlock Text="{Binding Device.Product}" Margin="10"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <materialDesign:PackIcon Margin="0,0,10,0"  VerticalAlignment="Center" Kind="Search"/>
-                    <TextBox x:Name="TBSearch" FontSize="18" Width="200" Text="{Binding Filter,Mode=TwoWay}" TextChanged="TextBox_TextChanged"/>
-                    <Button Margin="20,0,0,0" Command="{Binding Refresh}" Click="Button_Click" Style="{DynamicResource MaterialDesignFlatButton}">
-                        <materialDesign:PackIcon VerticalAlignment="Center" Kind="Refresh" />
-                    </Button>
+                    <TextBox x:Name="TBSearch" Width="200" Text="{Binding Filter,Mode=TwoWay}" TextChanged="TextBox_TextChanged"/>
+                    <Button Margin="20,0,0,0" Command="{Binding Refresh}" Click="Button_Click"  Content="刷新"/>
                 </StackPanel>
             </Grid>
 
