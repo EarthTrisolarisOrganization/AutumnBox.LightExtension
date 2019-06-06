@@ -14,6 +14,7 @@ namespace Zsh2401.BuildViewer
         DeviceState.Poweron |
         DeviceState.Recovery
         )]
+    [ExtVersion(1,2,0)]
     class EBuildViewer : LeafExtensionBase
     {
         [LMain]
