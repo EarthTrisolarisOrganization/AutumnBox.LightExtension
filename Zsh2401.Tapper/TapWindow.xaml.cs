@@ -18,7 +18,7 @@ namespace Zsh2401.Tapper
     /// <summary>
     /// TapWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class TapWindow : Window
+    public partial class TapWindow
     {
         public TapWindow(IDevice targetDevice)
         {

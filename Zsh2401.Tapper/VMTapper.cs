@@ -28,7 +28,7 @@ namespace Zsh2401.Tapper
         }
         private IDevice _dev;
 
-        public ICommand Input
+        public FlexiableCommand Input
         {
             get
             {
@@ -40,25 +40,39 @@ namespace Zsh2401.Tapper
                 RaisePropertyChanged();
             }
         }
-        private ICommand _input;
+        private FlexiableCommand _input;
 
         private readonly ICommandExecutor executor;
         public VMTapper()
         {
-            Input = new MVVMCommand(InputImpl);
+            Input = new FlexiableCommand(InputImpl);
             executor = new HestExecutor();
         }
         private void InputImpl(object para)
         {
-            try
+            Task.Run(() =>
             {
-                AndroidKeyCode code = (AndroidKeyCode)para;
-                executor.AdbShell(Device, $"input keyevent {(int)code}");
-            }
-            catch (Exception e)
-            {
-                SLogger<ETapper>.Warn($"can not input key {para}", e);
-            }
+                try
+                {
+                    ETapper._app.RunOnUIThread(() =>
+                    {
+                        Input.CanExecuteProp = false;
+                    });
+                    AndroidKeyCode code = (AndroidKeyCode)para;
+                    executor.AdbShell(Device, $"input keyevent {(int)code}");
+                }
+                catch (Exception e)
+                {
+                    SLogger<ETapper>.Warn($"can not input key {para}", e);
+                }
+                finally
+                {
+                    ETapper._app.RunOnUIThread(() =>
+                    {
+                        Input.CanExecuteProp = true;
+                    });
+                }
+            });
         }
     }
 }

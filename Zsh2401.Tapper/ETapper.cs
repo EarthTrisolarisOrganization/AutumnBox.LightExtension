@@ -17,12 +17,14 @@ namespace Zsh2401.Tapper
     [ExtRequiredDeviceStates(DeviceState.Poweron)]
     class ETapper : LeafExtensionBase
     {
+        public static IAppManager _app;
         [LMain]
         public void Main(IDevice device, IAppManager app)
         {
+            _app = app;
             app.RunOnUIThread(() =>
             {
-                new TapWindow(device).ShowDialog();
+                new TapWindow(device).Show();
             });
         }
     }
