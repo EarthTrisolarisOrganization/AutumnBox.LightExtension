@@ -1,5 +1,9 @@
-﻿using AutumnBox.Basic.Device;
+﻿using AutumnBox.Basic.Calling;
+using AutumnBox.Basic.Device;
 using AutumnBox.OpenFramework.Extension;
+using AutumnBox.OpenFramework.LeafExtension;
+using AutumnBox.OpenFramework.LeafExtension.Fast;
+using AutumnBox.OpenFramework.LeafExtension.Kit;
 using AutumnBox.OpenFramework.Open;
 using System;
 using System.Collections.Generic;
@@ -14,14 +18,25 @@ namespace Zsh2401.GappsSkipper
     [ExtIcon("googleplay.png")]
     [ExtDesc("帮助你跳过Gappps的开机检测")]
     [ExtRequiredDeviceStates(DeviceState.Poweron)]
-    class EGappsSkipper : SharpExtension
+    class EGappsSkipper : LeafExtensionBase
     {
-        protected override void Processing(Dictionary<string, object> data)
+        public void Main(ILeafUI ui, IDevice device, ICommandExecutor executor)
         {
-            IDevice currentDevice = GetService<IDeviceSelector>(ServicesNames.DEVICE_SELECTOR).GetCurrent(this);
-            Executor.AdbShell(currentDevice, "settings", "put", "secure", "user_setup_complete", "1");
-            Executor.AdbShell(currentDevice, "settings", "put", "global", "device_provisioned ", "1");
-            Ux.Message("已执行跳过命令");
+            using (ui)
+            {
+                ui.Title = this.GetName();
+                ui.Icon = this.GetIconBytes();
+                ui.Show();
+                executor.OutputReceived += (s, e) => ui.WriteOutput(e.Text);
+                ui.Closing += (s, e) =>
+                {
+                    executor.Dispose();
+                    return true;
+                };
+                executor.AdbShell(device, "settings put secure user_setup_complete 1");
+                executor.AdbShell(device, "settings put global device_provisioned 1");
+                ui.Finish();
+            }
         }
     }
 }
